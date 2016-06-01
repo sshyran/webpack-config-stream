@@ -28,20 +28,22 @@
         </ul>
       </header>
       <section>
-        <p><a href="https://www.npmjs.org/package/webpack-config-stream"><img src="http://img.shields.io/npm/v/webpack-config-stream.svg?style=flat" alt="NPM version"></a> <a href="https://travis-ci.org/mdreizin/webpack-config-stream"><img src="http://img.shields.io/travis/mdreizin/webpack-config-stream/master.svg?style=flat" alt="Travis build status"></a> <a href="https://ci.appveyor.com/project/mdreizin/webpack-config-stream"><img src="https://ci.appveyor.com/api/projects/status/github/mdreizin/webpack-config-stream?svg=true&amp;branch=master" alt="AppVeyor build status"></a> <a href="https://codeclimate.com/github/mdreizin/webpack-config-stream"><img src="https://codeclimate.com/github/mdreizin/webpack-config-stream/badges/gpa.svg" alt="Code Climate"></a> <a href="https://codeclimate.com/github/mdreizin/webpack-config-stream"><img src="https://codeclimate.com/github/mdreizin/webpack-config-stream/badges/coverage.svg" alt="Code Climate"></a> <a href="https://david-dm.org/mdreizin/webpack-config-stream"><img src="https://david-dm.org/mdreizin/webpack-config-stream.svg?style=flat" alt="Dependency Status"></a> <a href="https://david-dm.org/mdreizin/webpack-config-stream#info=devDependencies"><img src="https://david-dm.org/mdreizin/webpack-config-stream/dev-status.svg?style=flat" alt="Dependency Status"></a></p>
+        <p><strong>DEPRECATED</strong> in favor <a href="https://github.com/mdreizin/webpack-cluster">webpack-cluster</a>.</p>
+
+<p><a href="https://www.npmjs.org/package/webpack-config-stream"><img src="http://img.shields.io/npm/v/webpack-config-stream.svg?style=flat" alt="NPM version"></a> <a href="https://travis-ci.org/mdreizin/webpack-config-stream"><img src="http://img.shields.io/travis/mdreizin/webpack-config-stream/master.svg?style=flat" alt="Travis build status"></a> <a href="https://ci.appveyor.com/project/mdreizin/webpack-config-stream"><img src="https://ci.appveyor.com/api/projects/status/github/mdreizin/webpack-config-stream?svg=true&amp;branch=master" alt="AppVeyor build status"></a> <a href="https://codeclimate.com/github/mdreizin/webpack-config-stream"><img src="https://codeclimate.com/github/mdreizin/webpack-config-stream/badges/gpa.svg" alt="Code Climate"></a> <a href="https://codeclimate.com/github/mdreizin/webpack-config-stream"><img src="https://codeclimate.com/github/mdreizin/webpack-config-stream/badges/coverage.svg" alt="Code Climate"></a> <a href="https://david-dm.org/mdreizin/webpack-config-stream"><img src="https://david-dm.org/mdreizin/webpack-config-stream.svg?style=flat" alt="Dependency Status"></a> <a href="https://david-dm.org/mdreizin/webpack-config-stream#info=devDependencies"><img src="https://david-dm.org/mdreizin/webpack-config-stream/dev-status.svg?style=flat" alt="Dependency Status"></a></p>
 
 <h1>
-<a id="webpack-config-stream" class="anchor" href="#webpack-config-stream" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://github.com/webpack/webpack">webpack</a>-<a href="https://github.com/mdreizin/webpack-config">config</a>-stream</h1>
+<a id="webpack-config-stream" class="anchor" href="#webpack-config-stream" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/webpack/webpack">webpack</a>-<a href="https://github.com/mdreizin/webpack-config">config</a>-stream</h1>
 
 <p>Helps to build bundles based on webpack configs</p>
 
 <h2 id="documentation">
-<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h2>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h2>
 
 <p>For API docs please see the <a href="https://github.com/mdreizin/webpack-config-stream/blob/master/docs/API.md">documentation page</a>!</p>
 
 <h2 id="sample">
-<a id="sample" class="anchor" href="#sample" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sample</h2>
+<a id="sample" class="anchor" href="#sample" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample</h2>
 
 <p>Here is a quick sample of what <code>webpack-config-stream</code> does:</p>
 
@@ -65,7 +67,7 @@
         useMemoryFs<span class="pl-k">:</span> <span class="pl-c1">true</span>,
         progress<span class="pl-k">:</span> <span class="pl-c1">true</span>
     },
-    <span class="pl-c1">CONFIG_FILENAME</span> <span class="pl-k">=</span> <span class="pl-smi">webpack</span>.<span class="pl-c1">C</span>onfig.<span class="pl-c1">FILENAME</span>,
+    <span class="pl-c1">CONFIG_FILENAME</span> <span class="pl-k">=</span> <span class="pl-smi">webpack</span>.<span class="pl-smi">Config</span>.<span class="pl-c1">FILENAME</span>,
     <span class="pl-c1">CACHE_DEPENDS_ON</span> <span class="pl-k">=</span> [
         <span class="pl-s"><span class="pl-pds">'</span>./package.json<span class="pl-pds">'</span></span>
     ],
@@ -99,15 +101,15 @@
 });
 
 <span class="pl-smi">gulp</span>.<span class="pl-en">task</span>(<span class="pl-s"><span class="pl-pds">'</span>watch<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
-    <span class="pl-smi">gulp</span>.<span class="pl-c1">watch</span>(<span class="pl-smi">path</span>.<span class="pl-c1">join</span>(src, <span class="pl-s"><span class="pl-pds">'</span>**/*.*<span class="pl-pds">'</span></span>)).<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>change<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">event</span>) {
-        <span class="pl-k">if</span> (<span class="pl-smi">event</span>.<span class="pl-c1">type</span> <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>changed<span class="pl-pds">'</span></span>) {
-            <span class="pl-smi">gulp</span>.<span class="pl-en">src</span>(<span class="pl-smi">event</span>.<span class="pl-smi">path</span>, { base<span class="pl-k">:</span> <span class="pl-smi">path</span>.<span class="pl-en">resolve</span>(src) })
+    <span class="pl-smi">gulp</span>.<span class="pl-c1">watch</span>(<span class="pl-smi">path</span>.<span class="pl-c1">join</span>(src, <span class="pl-s"><span class="pl-pds">'</span>**/*.*<span class="pl-pds">'</span></span>)).<span class="pl-en">on</span>(<span class="pl-s"><span class="pl-pds">'</span>change<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-c1">event</span>) {
+        <span class="pl-k">if</span> (<span class="pl-c1">event</span>.<span class="pl-c1">type</span> <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>changed<span class="pl-pds">'</span></span>) {
+            <span class="pl-smi">gulp</span>.<span class="pl-en">src</span>(<span class="pl-c1">event</span>.<span class="pl-smi">path</span>, { base<span class="pl-k">:</span> <span class="pl-smi">path</span>.<span class="pl-en">resolve</span>(src) })
                 .<span class="pl-en">pipe</span>(<span class="pl-smi">webpack</span>.<span class="pl-en">closest</span>())
                 .<span class="pl-en">pipe</span>(<span class="pl-smi">webpack</span>.<span class="pl-en">cache</span>(<span class="pl-c1">WATCH_CACHE_STRATEGY</span>))
                 .<span class="pl-en">pipe</span>(<span class="pl-smi">webpack</span>.<span class="pl-en">init</span>(compilerOptions))
                 .<span class="pl-en">pipe</span>(<span class="pl-smi">webpack</span>.<span class="pl-en">props</span>(configOptions))
                 .<span class="pl-en">pipe</span>(<span class="pl-smi">webpack</span>.<span class="pl-c1">watch</span>(<span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">stats</span>) {
-                    <span class="pl-smi">gulp</span>.<span class="pl-en">src</span>(<span class="pl-smi">this</span>.<span class="pl-smi">path</span>, { base<span class="pl-k">:</span> <span class="pl-smi">this</span>.<span class="pl-smi">base</span> })
+                    <span class="pl-smi">gulp</span>.<span class="pl-en">src</span>(<span class="pl-v">this</span>.<span class="pl-smi">path</span>, { base<span class="pl-k">:</span> <span class="pl-v">this</span>.<span class="pl-smi">base</span> })
                         .<span class="pl-en">pipe</span>(<span class="pl-smi">webpack</span>.<span class="pl-en">proxy</span>(err, stats))
                         .<span class="pl-en">pipe</span>(<span class="pl-smi">webpack</span>.<span class="pl-en">format</span>({
                             verbose<span class="pl-k">:</span> <span class="pl-c1">true</span>,
